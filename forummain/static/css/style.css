@@ -1,0 +1,92 @@
+body{
+    background-color: rgb(218, 224, 230);
+    font-size: 18px;
+}
+
+header{
+    width: 99%;
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+.container{
+    width: 98%;
+}
+
+.logo{
+    float: left;
+    height: 40px;
+    width: 80px;
+    padding-left: 10px;
+}
+
+.search{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 45%;
+}
+
+.search input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #f1f1f1;
+    float: none;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 10px;
+}
+.search input:hover{
+    border: 1px solid #ccc;
+}
+
+
+.login-div{
+    float: right;
+    padding-top: 5px;
+}
+
+.login-div input{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    box-shadow: none;
+    border: 1px solid #1E90FF;
+    border-radius: 10px;
+}
+
+.login{
+    background-color: white;
+    color: #1E90FF;
+}
+
+.reg{
+    background-color: #1E90FF;
+    color: white;
+}
+
+.main{
+    padding-top: 4em;
+}
+
+.theme-block{
+    width: 50%;
+    background-color: white;
+    margin-left:  25%;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.name{
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.date{
+    font-weight: bold;
+    color: midnightblue;
+}

@@ -1,8 +1,32 @@
 <!DOCTYPE html>
+{% load static %}
 <head>
     <meta charset="utf-8">
     <title>Главная</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/scripts.js' %}"></script>
 </head>
 <body>
-    <h1>!Hello World!</h1>
+    <header>
+        <div class="container">
+            <img src="{% static 'img/logo.png' %}" class="logo">
+            <div class="search">
+                <input type="search" placeholder="Найти в темах..." name="q" value onkeyup="search(event);">
+            </div>
+            <div class="login-div">
+                <input class="login" type="button" value="Логин" onclick="createLoginForm();">
+                <input class="reg" type="button" value="Регистрация" onclick="delLoginForm();">
+            </div>
+        </div>
+    </header>
+    <div class="main">
+
+        <div class="container">    
+            <div class="theme-block">
+                <p><span class="name">Имя автора</span> <span class='date'>15.12.2025</span></p>
+                <p>Тестовое название треда, без спойлеров и нахтигалок, защищающих дрочильни от юбисофта</p>   
+            </div>
+
+        </div>
+    </div>
 </body>
