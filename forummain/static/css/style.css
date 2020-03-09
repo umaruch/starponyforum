@@ -73,10 +73,12 @@ header{
     padding-top: 4em;
 }
 
+
 .theme-block{
     width: 50%;
     background-color: white;
     margin-left:  25%;
+    margin-bottom: 15px;
     padding: 5px 15px;
     border-radius: 10px;
 }
@@ -89,4 +91,16 @@ header{
 .date{
     font-weight: bold;
     color: midnightblue;
+}
+
+.load{
+    text-align: center;
+    width: 52%;
+    height: 30px;
+    box-shadow: none;
+    border: 1px solid #1E90FF;
+    border-radius: 10px;
+    background-color: white;
+    color: #1E90FF;
+    margin-left: 25%;
 }

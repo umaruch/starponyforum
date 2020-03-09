@@ -10,8 +10,9 @@ def themesList(request):
         'index.html'
     )
 
-def updateThemesList(request):
+def updateThemesList(request,page):
     if request.is_ajax and request.method == "GET":
-        k = list(Theme.objects.all().values())
+        page=page*5
+        k = list(Theme.objects.all().values())[page-5:page]
         print(k)
         return JsonResponse( (k), safe=False)

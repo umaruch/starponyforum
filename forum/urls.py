@@ -19,5 +19,5 @@ from forummain import views
 urlpatterns = [ 
     path('', views.themesList),
     path('admin/', admin.site.urls),
-    path('update', views.updateThemesList)
+    path('update<int:page>', views.updateThemesList)
 ]
