@@ -1,19 +1,10 @@
-body{
-    background-color: rgb(218, 224, 230);
-    font-size: 18px;
-}
-
 header{
     width: 99%;
     position: fixed;
     background-color: white;
     border-radius: 10px;
-    padding-top: 0.5%;
     padding-bottom: 0.5%;
-}
-
-.container{
-    width: 98%;
+    padding-top: 0.5%;
 }
 
 .logo{
@@ -68,39 +59,28 @@ header{
     background-color: #1E90FF;
     color: white;
 }
-
-.main{
-    padding-top: 4em;
+.user-logged{
+    float: right;
+    padding-top: 5px;
 }
 
-
-.theme-block{
-    width: 50%;
-    background-color: white;
-    margin-left:  25%;
-    margin-bottom: 15px;
-    padding: 5px 15px;
-    border-radius: 10px;
-}
-
-.name{
-    font-weight: bold;
-    color: darkgreen;
-}
-
-.date{
-    font-weight: bold;
-    color: midnightblue;
-}
-
-.load{
+.user-logged input{
     text-align: center;
-    width: 52%;
     height: 30px;
     box-shadow: none;
-    border: 1px solid #1E90FF;
     border-radius: 10px;
+}
+
+.add-theme{
+    width: 140px;
     background-color: white;
+    border: 1px solid #1E90FF;
     color: #1E90FF;
-    margin-left: 25%;
+}
+
+.logout{
+    width: 80px;
+    background-color: crimson;
+    border: 1px solid crimson;
+    color: white;
 }

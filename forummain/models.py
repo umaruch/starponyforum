@@ -11,6 +11,7 @@ class Theme(models.Model):
     def __str__(self):
         return self.title
 
+
 class Message(models.Model):
     theme = models.ForeignKey(Theme,on_delete = models.CASCADE)
     author = models.ForeignKey(User, on_delete = models.CASCADE, to_field='username')

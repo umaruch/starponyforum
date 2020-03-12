@@ -19,5 +19,9 @@ from forummain import views
 urlpatterns = [ 
     path('', views.themesList),
     path('admin/', admin.site.urls),
-    path('update<int:page>', views.updateThemesList)
+    path('update/', views.updateThemesList),
+    path('login/',views.updateMessagesList),
+    path('logout/',views.UserLogout)    
+    #register/user=usernamepass=password
+    #login/user=username?pass=password
 ]
