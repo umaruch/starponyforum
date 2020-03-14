@@ -20,14 +20,14 @@
                 <input type="search" placeholder="Найти в темах..." name="q" value>
             </div>
             {% if user.is_authenticated %}
-            <div class="user-logged">
-                <input class="add-theme" type="button" value="Добавить тему" onclick="createThemeForm();">
+            <div class="user-div-logged">
+                <input class="add-theme" type="button" value="Добавить тему" onclick="openAT();">
                 <input class="logout" type="button" value="Выйти" onclick="logout();">
             </div>
             {% else %}
-            <div class="login-div">
-                <input class="login" type="button" value="Логин" onclick="createLoginForm();">
-                <input class="reg" type="button" value="Регистрация" onclick="delLoginForm();">
+            <div class="user-div-unlogged">
+                <input class="login" type="button" value="Логин" onclick="openLF();">
+                <input class="reg" type="button" value="Регистрация" onclick="openRF();">
             </div>
             {% endif %}
         </div>
@@ -35,32 +35,56 @@
 
     <div class="main" id="main">
         <div class="container">
-            <div id="kek" class="themes">
+            <div id="themes" class="themes">
                 
             </div>
+
             <input type="button" class="load" value="Загрузить еще" onclick="loadThemes();">
+            
             <script type="text/javascript">
                 loadThemes();
             </script>
+
         </div>
     </div>
 
-    <div id="login-main-div" class="login-main-div">
+    <div id="login-div" class="login-div">
         <div class="login-content">
             <div class="login-header">
-                <p>ЛОГИН</p>
                 <span class="close" onclick="closeLF();">X</span>
+                <p>Вход</p>
             </div>
             <div class="input-div">
-                <p>Имя пользователя:</p><input type="text" class="username-login">
+                <p>Имя пользователя:</p><input type="text" id="username-login">
             </div>
             <div class="input-div">
-                <p>Пароль:</p><input type="text" class="username-login">                
+                <p>Пароль:</p><input type="password" id="pass-login">                
             </div>
-            
-            <input type="button" value="Вход" class="post-login">
+            <p id="status-l"></p>
+            <input type="button" value="Вход" class="post-login" onclick="login();">
 
         </div>
     </div>
+
+    <div id="reg-div" class="reg-div">
+        <div class="reg-content">
+            <div class="reg-header">
+                <span class="close" onclick="closeRF();">X</span>
+                <p>Регистрация</p>
+            </div>
+            <div class="input-div">
+                <p>Имя пользователя</p><input type="text" id="username-reg">
+            </div>
+            <div class="input-div">
+                <p>Пароль:</p><input type="password" id="pass1-reg">                
+            </div>
+            <div class="input-div">
+                <p>Повторите пароль:</p><input type="password" id="pass2-reg">                
+            </div>
+            <p id="status-r"></p>
+            <input type="button" value="Вход" class="post-reg" onclick="register();">
+        </div>
+    </div>
+
 
 </body>

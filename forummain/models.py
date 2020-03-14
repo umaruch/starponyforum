@@ -11,6 +11,11 @@ class Theme(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['-id',]
+
+
+
 
 class Message(models.Model):
     theme = models.ForeignKey(Theme,on_delete = models.CASCADE)
@@ -21,3 +26,6 @@ class Message(models.Model):
 
     def __str__(self):
         return self.text
+
+    class Meta:
+        ordering = ['-id',]
