@@ -21,14 +21,10 @@
     text-align: center;
     border-radius: 10px;
     width: 50%;
-    animation-name: animate2;
+    animation-name: animate;
     animation-duration: 0.5s;
 }
 
-@keyframes animate2{
-    from {top:-320px;opacity: 0}
-    to {top: 0;opacity: 1;}
-}
 
 .reg-header{
     height: 15%;

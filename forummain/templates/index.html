@@ -7,6 +7,8 @@
     <link href="{% static 'css/header.css' %}" rel="stylesheet">
     <link href="{% static 'css/login-form.css' %}" rel="stylesheet">
     <link href="{% static 'css/register-form.css' %}" rel="stylesheet">
+    <link href="{% static 'css/theme-form.css' %}" rel="stylesheet">
+    <link href="{% static 'css/message-form.css' %}" rel="stylesheet">
     <script src="{% static 'js/login.js' %}"></script>
     <script src="{% static 'js/register.js' %}"></script>
     <script src="{% static 'js/content.js' %}"></script>
@@ -14,14 +16,13 @@
 </head>
 <body>
     <header>
-        <div class="container">
             <img src="{% static 'img/logo.png' %}" class="logo">
             <div class="search">
                 <input type="search" placeholder="Найти в темах..." name="q" value>
             </div>
             {% if user.is_authenticated %}
             <div class="user-div-logged">
-                <input class="add-theme" type="button" value="Добавить тему" onclick="openAT();">
+                <input class="add-theme" type="button" value="Добавить тему" onclick="openTF();">
                 <input class="logout" type="button" value="Выйти" onclick="logout();">
             </div>
             {% else %}
@@ -30,11 +31,15 @@
                 <input class="reg" type="button" value="Регистрация" onclick="openRF();">
             </div>
             {% endif %}
-        </div>
     </header>
 
     <div class="main" id="main">
-        <div class="container">
+        {% if user.is_authenticated %}
+        <div class="username">
+        <p>Вы вошли как <span style="color: darkgreen;">{{ user.get_username }}</span></p>
+        </div>
+        {% endif %}
+        <div class="container" id="container">
             <div id="themes" class="themes">
                 
             </div>
@@ -86,5 +91,14 @@
         </div>
     </div>
 
-
+    <div id="addtheme-div" class="addtheme-div">
+        <div class="addtheme-content">
+            <div class="addtheme-header">
+                <span class="close" onclick="closeTF();">X</span>
+            </div>
+            <div class="addtheme-input">
+                <input type="text" id="input-title-theme"><input type="button" value="Добавить" class="post-reg" onclick="addtheme();">         
+            </div>
+        </div>
+    </div>
 </body>

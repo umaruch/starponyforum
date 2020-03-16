@@ -19,15 +19,26 @@ def updateThemesList(request):
         k = list(Theme.objects.all().values())[page-5:page]
         return JsonResponse( (k), safe=False)
 
+def addTheme(request):
+    if request.is_ajax and request.method == "GET":
+        if request.user.is_authenticated:
+            title = request.GET.get('title')
+            theme = Theme.objects.create(title=title,author=request.user)
+            theme.save()
+            return JsonResponse({'status': 1})
+
+def addMessage(request):
+    if request.is_ajax and request.method == "POST":
+        pass
+
+        
 
 def updateMessageList(request):
     if request.is_ajax and request.method == "GET":
         pass
 
 
-def updateMessagesList(request):
-    print("Hello")
-
+#Операции с БД Пользователя
 def UserLogin(request):
     if request.is_ajax and request.method == "GET":
         username = request.GET.get("username")
@@ -38,7 +49,6 @@ def UserLogin(request):
             return JsonResponse({'status': 1}, safe = False)
         else:
             return JsonResponse({'status': 0}, safe = False)
-
 
 
 def UserLogout(request):

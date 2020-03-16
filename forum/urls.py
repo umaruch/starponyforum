@@ -20,9 +20,11 @@ urlpatterns = [
     path('', views.themesList),
     path('admin/', admin.site.urls),
     path('update/', views.updateThemesList),
-    path('login/',views.UserLogin),
-    path('logout/',views.UserLogout),   
-    path('register/',views.UserRegister)
+    path('login/', views.UserLogin),
+    path('logout/', views.UserLogout),   
+    path('register/', views.UserRegister),
+    path('addtheme/', views.addTheme),
+    path('addmessage/', views.addMessage),
     #register/user=usernamepass=password
     #login/user=username?pass=password
 ]

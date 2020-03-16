@@ -11,6 +11,15 @@ body{
     padding-top: 4em;
 }
 
+.main .username{
+    font-size: 24px;
+    text-align: center;
+    width: 20%;
+    margin-left: 78%;
+    position: fixed;
+    background-color: white;
+    border-radius: 15px;
+}
 
 .theme-block{
     width: 50%;
@@ -21,9 +30,12 @@ body{
     border-radius: 10px;
 }
 
+
+
 .name{
     font-weight: bold;
     color: darkgreen;
+    margin-right: 30px  ;
 }
 
 .date{
