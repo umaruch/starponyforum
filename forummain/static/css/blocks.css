@@ -7,6 +7,12 @@ body{
     width: 98%;
 }
 
+#messages-div{
+    display: none;
+    padding: 8px 15px;
+    width: 98%;
+}
+
 .main{
     padding-top: 4em;
 }
@@ -53,4 +59,63 @@ body{
     background-color: white;
     color: #1E90FF;
     margin-left: 25%;
+}
+
+.this-theme-info{
+    text-align: center;
+    width: 52%;
+    box-shadow: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #1E90FF;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.back{
+    position: fixed;
+    left: 5%;
+    top: 15%;
+    background-color: #1E90FF;
+    color: white;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+    border-radius: 10px;
+}
+.back:hover,
+.back:focus{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#new-message-field{
+    width: 90%;
+    height: 30px;
+    border: none;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    border-radius: 10px;
+}
+#new-message-field:hover{
+    border: 1px solid #ccc;
+}
+
+.send{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #1E90FF;
+    border: 3px solid #1E90FF;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }

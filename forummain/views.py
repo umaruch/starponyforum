@@ -17,7 +17,8 @@ def updateThemesList(request):
         page = int(request.GET.get('p'))
         page=page*5
         k = list(Theme.objects.all().values())[page-5:page]
-        return JsonResponse( (k), safe=False)
+        print(k)
+        return JsonResponse(k, safe=False)
 
 def addTheme(request):
     if request.is_ajax and request.method == "GET":
@@ -25,18 +26,32 @@ def addTheme(request):
             title = request.GET.get('title')
             theme = Theme.objects.create(title=title,author=request.user)
             theme.save()
-            return JsonResponse({'status': 1})
+            k = list(Theme.objects.all().values())[0:5]
+            return JsonResponse(k, safe=False)
+
+
+
 
 def addMessage(request):
-    if request.is_ajax and request.method == "POST":
-        pass
+    if request.is_ajax and request.method == "GET":
+        if request.user.is_authenticated:
+            text = request.GET.get('text')
+            id_text = request.GET.get('id')
+            id = int(id_text[1:len(id_text)])
+            mes = Message.objects.create(text=text,author=request.user, theme_id=id)
+            mes.save()
+            k=list(Message.objects.filter(theme_id=id).values())[0:5]
+            return JsonResponse(k, safe=False)
 
         
 
 def updateMessageList(request):
     if request.is_ajax and request.method == "GET":
-        pass
-
+        title_id = int(request.GET.get('id'))
+        page = int(request.GET.get('p'))
+        page=page*5
+        k=list(Message.objects.filter(theme_id=title_id).values())[page-5:page]
+        return JsonResponse(k, safe=False)
 
 #Операции с БД Пользователя
 def UserLogin(request):

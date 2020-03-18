@@ -18,7 +18,7 @@
     <header>
             <img src="{% static 'img/logo.png' %}" class="logo">
             <div class="search">
-                <input type="search" placeholder="Найти в темах..." name="q" value>
+                <input type="search" placeholder="Найти в темах..." name="q">
             </div>
             {% if user.is_authenticated %}
             <div class="user-div-logged">
@@ -36,7 +36,7 @@
     <div class="main" id="main">
         {% if user.is_authenticated %}
         <div class="username">
-        <p>Вы вошли как <span style="color: darkgreen;">{{ user.get_username }}</span></p>
+            <p>Вы вошли как <span style="color: darkgreen;">{{ user.get_username }}</span></p>
         </div>
         {% endif %}
         <div class="container" id="container">
@@ -45,11 +45,27 @@
             </div>
 
             <input type="button" class="load" value="Загрузить еще" onclick="loadThemes();">
-            
             <script type="text/javascript">
                 loadThemes();
             </script>
 
+        </div>
+
+        <div id="messages-div" class="container">
+            <p class="back" onclick="backToThemes();">Назад</p>
+            <div class="this-theme-info" id="this-theme-info">
+                <p>Добавить сообщение на 
+                    <span style="color: darkgreen;" id="this-theme-name"></span>
+                    <span style="color: darkred" id="this-theme-id"></span></p>
+                <input type="text" id="new-message-field">
+                <input type="button" value=">" class="send" onclick="addMessage();">
+            </div>
+
+            <div id="messages" class="themes">
+
+            </div>
+
+            <input type="button" class="load" value="Загрузить еще" onclick="loadMessages();">
         </div>
     </div>
 

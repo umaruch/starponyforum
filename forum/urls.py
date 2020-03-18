@@ -19,12 +19,14 @@ from forummain import views
 urlpatterns = [ 
     path('', views.themesList),
     path('admin/', admin.site.urls),
-    path('update/', views.updateThemesList),
+    path('updatethemes/', views.updateThemesList),
+    path('updatemessages/', views.updateMessageList),
     path('login/', views.UserLogin),
     path('logout/', views.UserLogout),   
     path('register/', views.UserRegister),
     path('addtheme/', views.addTheme),
     path('addmessage/', views.addMessage),
+    #path('search/', views.search)
     #register/user=usernamepass=password
     #login/user=username?pass=password
 ]
